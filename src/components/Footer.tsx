@@ -1,4 +1,4 @@
-import { FaGithub, FaXTwitter, FaShareFromSquare } from "react-icons/fa6";
+import { FaGithub } from "react-icons/fa6";
 import CommonTooltip from "@/components/common/CommonTooltip";
 import Share from "@/components/footer/Share";
 import Info from "@/components/footer/Info";

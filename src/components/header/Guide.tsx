@@ -1,6 +1,5 @@
 "use client";
 
-import { Separator } from "@/components/ui/separator";
 import { FaQuestion } from "react-icons/fa6";
 import CommonDialog from "@/components/common/CommonDialog";
 

@@ -98,7 +98,7 @@ export default function usePreference<T extends keyof Preference>(category: T) {
       console.warn(`Failed to parse localStorage for ${category}, using default.`);
       return defaultPreference[category];
     }
-  }, [localStorage]);
+  }, [category, localStorage]);
 
   const setValue = <K extends keyof Preference[T]>(key: K, value: Preference[T][K]) => {
     saveLocalStorage((prev) => {

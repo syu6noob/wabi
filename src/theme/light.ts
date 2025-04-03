@@ -1,14 +1,3 @@
-const colors = {
-  background: '#fff',
-  background_secondary: '#eee',
-  text_primary: '#333',
-  text_secondary: '#444',
-  text_default: '#222',
-
-  primary: '#333',
-  secondary: '#444'
-};
-
 const variables = {
   themeColor: "#ffffff",
 

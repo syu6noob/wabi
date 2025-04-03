@@ -8,8 +8,8 @@ import darkVariables from "@/theme/dark";
 import lightVariables from "@/theme/light";
 import dynamic from "next/dynamic";
 
-function provideTheme() {
-  const [preference, setPreference] = usePreference('theme');
+function Theme() {
+  const [preference] = usePreference('theme');
   const [variables, setVariables] = useState(darkVariables);
 
   const formatVariables = (variables: {
@@ -24,13 +24,11 @@ function provideTheme() {
   }
 
   useEffect(() => {
-    let theme = preference('type');
+    const theme = preference('type');
     if (theme === 'light') {
       setVariables(lightVariables);
     } else if (theme === 'dark') {
       setVariables(darkVariables);
-    } else {
-      
     }
   }, [preference])
 
@@ -45,6 +43,6 @@ function provideTheme() {
 }
 
 // To avoid the error: Error: useLocalStorage is a client-only hook
-const Theme = dynamic(async () => provideTheme, { ssr: false });
+const ThemeWrap = dynamic(async () => Theme, { ssr: false });
 
-export default Theme;
+export default ThemeWrap;

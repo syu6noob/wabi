@@ -1,10 +1,10 @@
 "use client";
 
 import usePreference from "@/lib/preference/usePreference";
-import type { TimeType } from "./Time";
+
+import type { TimeType } from "./TimeType";
 
 import fillZero from "@/lib/fillZero";
-import { useState } from "react";
 import { cn } from "@/lib/utils";
 
 export default function Time24({
@@ -14,7 +14,7 @@ export default function Time24({
   time: TimeType,
   isZoomed: boolean
 }) {
-  const [preference, setPreference] = usePreference('timeFormat');
+  const [preference] = usePreference('timeFormat');
 
   const defaultTimeClassName = "text-7xl md:text-8xl lg:text-9xl";
   const zoomedTimeClassName = "text-zoomed";

@@ -1,7 +1,7 @@
 "use client";
 
 import usePreference from "@/lib/preference/usePreference";
-import type { TimeType } from "./Time.d.ts";
+import type { TimeType } from "./TimeType.js";
 
 import fillZero from "@/lib/fillZero";
 import { cn } from "@/lib/utils";
@@ -13,7 +13,7 @@ export default function Time24({
   time: TimeType,
   isZoomed: boolean
 }) {
-  const [preference, setPreference] = usePreference('timeFormat');
+  const [preference] = usePreference('timeFormat');
 
   const defaultTimeClassName = "text-7xl md:text-8xl lg:text-9xl";
   const zoomedTimeClassName = "text-zoomed";

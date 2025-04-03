@@ -12,7 +12,6 @@ import {
 import CommonTooltip from "@/components/common/CommonTooltip";
 import { useMediaQuery } from "@uidotdev/usehooks";
 import { useState } from "react";
-import { Button } from "../ui/button";
 import {
   Drawer,
   DrawerTrigger,
@@ -20,8 +19,6 @@ import {
   DrawerHeader,
   DrawerTitle,
   DrawerDescription,
-  DrawerFooter,
-  DrawerClose
 } from "../ui/drawer";
 import dynamic from "next/dynamic";
 

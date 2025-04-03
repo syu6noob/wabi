@@ -1,7 +1,7 @@
 "use client";
 
 import CommonDialog from "@/components/common/CommonDialog";
-import { FaShareFromSquare, FaInstagram, FaXTwitter, FaFacebook, FaCopy } from "react-icons/fa6";
+import { FaShareFromSquare, FaCopy } from "react-icons/fa6";
 import { Input } from "@/components/ui/input"
 import { Button } from "../ui/button";
 

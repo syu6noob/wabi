@@ -5,12 +5,12 @@ import { useEffect, useState } from "react";
 import usePreference from "../preference/usePreference";
 
 function Font() {
-  const [preference, setPreference] = usePreference('fonts');
+  const [preference] = usePreference('fonts');
   const [variables, setVariables] = useState("");
 
   useEffect(() => {
-    let fontDefault = preference('default');
-    let fontClock = preference('clock');
+    const fontDefault = preference('default');
+    const fontClock = preference('clock');
     
     let variablesTemp = fontDefault.fontSource.map((source) => source + "\n").join("");
 

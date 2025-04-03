@@ -3,8 +3,8 @@
 import { useEffect, useState } from 'react'
 import dynamic from 'next/dynamic';
 
-import { TimeType } from './clock/Time';
-import { DateType } from './clock/Date';
+import type { TimeType } from './clock/TimeType';
+import type { DateType } from './clock/DateType';
 
 import usePreference from "@/lib/preference/usePreference";
 
@@ -16,7 +16,7 @@ function Time() {
 
   // clock architecture
 
-  const [preference, setPreference] = usePreference('timeFormat');
+  const [preference] = usePreference('timeFormat');
 
   const [isInitial, setIsInitial] = useState<boolean>(true);
   const [countsFromLastUpdated, setCountsFromLastUpdated] = useState(0);
@@ -35,7 +35,7 @@ function Time() {
 
   const initTime = () => {
     const dateObject = new Date();
-    let newUpdateInterval = 1000 - dateObject.getMilliseconds();
+    const newUpdateInterval = 1000 - dateObject.getMilliseconds();
     setTime({
       hour: dateObject.getHours(),
       minute: dateObject.getMinutes(),
@@ -104,7 +104,7 @@ function Time() {
 
   useEffect(() => {
     initTime();
-  }, [])
+  })
 
   // design
 

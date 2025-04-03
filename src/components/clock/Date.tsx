@@ -1,5 +1,5 @@
 import usePreference from "@/lib/preference/usePreference";
-import type { DateType } from "./Date";
+import type { DateType } from "./DateType";
 import fillZero from "@/lib/fillZero";
 import { cn } from "@/lib/utils";
 
@@ -10,7 +10,7 @@ export default function Date({
   date: DateType,
   isZoomed: boolean
 }) {
-  const [preference, setPreference] = usePreference('dateFormat');
+  const [preference] = usePreference('dateFormat');
 
   const monthName = {
     'english': [
@@ -31,19 +31,20 @@ export default function Date({
   };
 
   const formatDate = (dateObject: DateType) => {
-    let order = preference('order');
-    let separator = preference('separatingLetter');
-    let year = `${dateObject.year}`;
+    const order = preference('order');
+    const separator = preference('separatingLetter');
+
+    const year = `${dateObject.year}`;
 
     let month = "";
-    let lang = preference('monthType');
+    const lang = preference('monthType');
     if (lang !== 'number') {
       month = monthName[lang][dateObject.month - 1];
     } else {
       month = `${preference('enableZeroPadding') ? fillZero(dateObject.month, 2) : dateObject.month}`;
     }
 
-    let date = `${preference('enableZeroPadding') ? fillZero(dateObject.date, 2) : dateObject.date}`;
+    const date = `${preference('enableZeroPadding') ? fillZero(dateObject.date, 2) : dateObject.date}`;
 
     if (order === 'Date-Month-Year') {
       return `${date}${separator}${month}${separator}${year}`;
@@ -55,7 +56,7 @@ export default function Date({
   };
 
   const formatDay = (dateObject: DateType) => {
-    let lang = preference('dayType');
+    const lang = preference('dayType');
     return dayName[lang][dateObject.day - 1];
   };
 
