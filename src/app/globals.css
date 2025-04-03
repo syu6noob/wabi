@@ -1,0 +1,62 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: var(--backgroundColor);
+  --color-foreground: var(--foregroundColor);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  --color-sidebar-ring: var(--sidebarRingColor);
+  --color-sidebar-border: var(--sidebarBorderColor);
+  --color-sidebar-accent-foreground: var(--sidebarAccentForegroundColor);
+  --color-sidebar-accent: var(--sidebarAccentColor);
+  --color-sidebar-primary-foreground: var(--sidebarPrimaryForegroundColor);
+  --color-sidebar-primary: var(--sidebarPrimaryColor);
+  --color-sidebar-foreground: var(--sidebarForegroundColor);
+  --color-sidebar: var(--sidebarColor);
+  --color-ring: var(--ringColor);
+  --color-input: var(--inputColor);
+  --color-border: var(--borderColor);
+  --color-destructive: var(--destructiveColor);
+  --color-accent-foreground: var(--accentForegroundColor);
+  --color-accent: var(--accentColor);
+  --color-muted-foreground: var(--mutedForegroundColor);
+  --color-muted: var(--mutedColor);
+  --color-secondary-foreground: var(--secondaryForegroundColor);
+  --color-secondary: var(--secondaryColor);
+  --color-primary-foreground: var(--primaryForegroundColor);
+  --color-primary: var(--primaryColor);
+  --color-popover-foreground: var(--popoverForegroundColor);
+  --color-popover: var(--popoverColor);
+  --color-card-foreground: var(--cardForegroundColor);
+  --color-card: var(--cardColor);
+}
+
+:root {
+  --radius: 0.625rem;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+body {
+  overscroll-behavior: none;
+  -webkit-overflow-scrolling: touch;
+}
+
+@theme {
+  --font-default: sans-serif;
+  --font-clock: sans-serif;
+
+  --text-zoomed: min(60vh, 22vw);
+  --text-small-zoomed: min(20vh, 8vw);
+  --text-date-zoomed: min(15vh, 4vw);
+}
